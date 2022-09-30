@@ -1,0 +1,1511 @@
+<krpano version="1.20.9" title="Virtual Tour">
+  <action name="set_hotspot">
+    txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].distorted,true); 
+    set(plugin[get(tooltipname)].background,true);
+    set(plugin[get(tooltipname)].backgroundcolor,0x000000);
+    set(plugin[get(tooltipname)].roundedge,5); 
+    set(plugin[get(tooltipname)].backgroundalpha,0.5);
+    set(plugin[get(tooltipname)].css,'text-align:center; color:#FFFFFF;font-family:MicrosoftYahei;font-size:1rem;padding:2px 2px;');
+    if(device.mobile,set(plugin[get(tooltipname)].css,'text-align:center;color:#FFFFFF;font-family:MicrosoftYahei;font-weight:bold;font-size:1rem;padding:2px 2px;'); );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,0);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) );
+    <!-- 地标动画执行 -->
+    inc(frame,1,get(lastframe),0); mul(ypos,frame,frameheight); txtadd(crop,'0|',get(ypos),'|',get(framewidth),'|',get(frameheight)); delayedcall(0.03, if(loaded, hotspot_animate() ) );
+  </action>
+  <!-- 黑色 -->
+  <action name="set_flag_black">
+    txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 0.375rem;
+     border-bottom-right-radius: 0.375rem;
+     border-top-left-radius: 0.375rem;
+     border-bottom-left-radius: 0.375rem;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:1rem;
+    font-size:1.4rem;
+    padding: 2px 10px;
+    background: rgba(31, 41, 55, .8);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'); 
+    if(device.mobile,
+    set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 0.375rem;
+     border-bottom-right-radius: 0.375rem;
+     border-top-left-radius: 0.375rem;
+     border-bottom-left-radius: 0.375rem;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:.6rem;
+    padding: 1px 5px;
+    background:  rgba(31, 41, 55, .8);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;');
+    );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+  <action name="set_flag_black_r">
+		txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:1rem;
+    line-height:1.4rem;
+    padding: 2px 10px;
+    background:  rgba(31, 41, 55, .8);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'
+    ); 
+    if(device.mobile,
+    set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:.6rem;
+    padding: 1px 5px;
+    background:  rgba(31, 41, 55, .8);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'
+    ); 
+    );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+  <action name="set_flag_black_e">
+		txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+    width:1.2rem;
+    word-wrap:break-word
+    word-break: break-all;
+    white-space: pre-wrap;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:1rem;
+    line-height:1.2rem;
+    padding: 4px 2px;
+    background:  rgba(31, 41, 55, .8);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'
+    ); 
+    if(device.mobile,
+    set(plugin[get(tooltipname)].css,
+    'text-align:center;
+    width:0.75rem;
+    word-wrap:break-word
+    word-break: break-all;
+    white-space: pre-wrap;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:0.6rem;
+    padding: 2px 1px;
+    background:  rgba(31, 41, 55, .8);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'
+    ); 
+    );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+
+
+  <!-- ************  红色   ***************-->
+  <action name="set_flag_red">
+    txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 0.375rem;
+     border-bottom-right-radius: 0.375rem;
+     border-top-left-radius: 0.375rem;
+     border-bottom-left-radius: 0.375rem;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:1rem;
+    font-size:1.4rem;
+    padding: 2px 10px;
+    background: -webkit-linear-gradient(#a41c3b,#5c1022,#a31c3b);
+    background: -o-linear-gradient(#a41c3b,#5c1022,#a31c3b);
+    background: -moz-linear-gradient(#a41c3b,#5c1022,#a31c3b); 
+    background: linear-gradient(#a41c3b,#5c1022,#a31c3b); 
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'); 
+    if(device.mobile,
+    set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 0.375rem;
+     border-bottom-right-radius: 0.375rem;
+     border-top-left-radius: 0.375rem;
+     border-bottom-left-radius: 0.375rem;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:.6rem;
+    padding: 1px 5px;
+    background: -webkit-linear-gradient(#a41c3b,#5c1022,#a31c3b);
+    background: -o-linear-gradient(#a41c3b,#5c1022,#a31c3b);
+    background: -moz-linear-gradient(#a41c3b,#5c1022,#a31c3b); 
+    background: linear-gradient(#a41c3b,#5c1022,#a31c3b); 
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;');
+    );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+  <action name="set_flag_red_r">
+		txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:1rem;
+    line-height:1.4rem;
+    padding: 2px 10px;
+    background: -webkit-linear-gradient(#a41c3b,#5c1022,#a31c3b);
+    background: -o-linear-gradient(#a41c3b,#5c1022,#a31c3b);
+    background: -moz-linear-gradient(#a41c3b,#5c1022,#a31c3b); 
+    background: linear-gradient(#a41c3b,#5c1022,#a31c3b);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'
+    ); 
+    if(device.mobile,
+    set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:.6rem;
+    padding: 1px 5px;
+    background: -webkit-linear-gradient(#a41c3b,#5c1022,#a31c3b);
+    background: -o-linear-gradient(#a41c3b,#5c1022,#a31c3b);
+    background: -moz-linear-gradient(#a41c3b,#5c1022,#a31c3b); 
+    background: linear-gradient(#a41c3b,#5c1022,#a31c3b);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'
+    ); 
+    );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+  <action name="set_flag_red_e">
+		txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+    width:1.2rem;
+    word-wrap:break-word
+    word-break: break-all;
+    white-space: pre-wrap;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:1rem;
+    line-height:1.2rem;
+    padding: 4px 2px;
+    background: -webkit-radial-gradient(#5c1022,#a41c3b);
+    background: -o-radial-gradient(#5c1022,#a41c3b);
+    background: -moz-radial-gradient(#5c1022,#a41c3b); 
+    background: radial-gradient(#5c1022,#a41c3b);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'
+    ); 
+    if(device.mobile,
+    set(plugin[get(tooltipname)].css,
+    'text-align:center;
+    width:0.75rem;
+    word-wrap:break-word
+    word-break: break-all;
+    white-space: pre-wrap;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:0.6rem;
+    padding: 2px 1px;
+    background: -webkit-radial-gradient(#5c1022,#a41c3b);
+    background: -o-radial-gradient(#5c1022,#a41c3b);
+    background: -moz-radial-gradient(#5c1022,#a41c3b); 
+    background: radial-gradient(#5c1022,#a41c3b);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'
+    ); 
+    );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+
+
+  <!-- ************  黄色   ***************-->
+  <action name="set_flag_yellow">
+				txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 0.375rem;
+     border-bottom-right-radius: 0.375rem;
+     border-top-left-radius: 0.375rem;
+     border-bottom-left-radius: 0.375rem;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:1rem;
+    font-size:1.4rem;
+    padding: 2px 10px;
+    background: -webkit-linear-gradient(#b6803d,#573d1d,#b37e3c);
+    background: -o-linear-gradient(#b6803d,#573d1d,#b37e3c);
+    background: -moz-linear-gradient(#b6803d,#573d1d,#b37e3c); 
+    background: linear-gradient(#b6803d,#573d1d,#b37e3c); 
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'); 
+    if(device.mobile,
+    set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 0.375rem;
+     border-bottom-right-radius: 0.375rem;
+     border-top-left-radius: 0.375rem;
+     border-bottom-left-radius: 0.375rem;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:.6rem;
+    padding: 1px 5px;
+    background: -webkit-linear-gradient(#b6803d,#573d1d,#b37e3c);
+    background: -o-linear-gradient(#b6803d,#573d1d,#b37e3c);
+    background: -moz-linear-gradient(#b6803d,#573d1d,#b37e3c); 
+    background: linear-gradient(#b6803d,#573d1d,#b37e3c); 
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'); 
+    );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+  <action name="set_flag_yellow_r">
+    txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:1rem;
+    font-size:1.4rem;
+    padding: 2px 10px;
+    background: -webkit-linear-gradient(#b6803d,#573d1d,#b37e3c);
+    background: -o-linear-gradient(#b6803d,#573d1d,#b37e3c);
+    background: -moz-linear-gradient(#b6803d,#573d1d,#b37e3c); 
+    background: linear-gradient(#b6803d,#573d1d,#b37e3c);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'); 
+    if(device.mobile,
+    set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:.6rem;
+    padding: 1px 5px;
+    background: -webkit-linear-gradient(#b6803d,#573d1d,#b37e3c);
+    background: -o-linear-gradient(#b6803d,#573d1d,#b37e3c);
+    background: -moz-linear-gradient(#b6803d,#573d1d,#b37e3c); 
+    background: linear-gradient(#b6803d,#573d1d,#b37e3c);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'); 
+    );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+  <action name="set_flag_yellow_e">
+		txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+    width:1.2rem;
+    word-wrap:break-word
+    word-break: break-all;
+    white-space: pre-wrap;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:1rem;
+    line-height:1.2rem;
+    padding: 4px 2px;
+    background: -webkit-radial-gradient(#573d1d,#b6803d);
+    background: -o-radial-gradient(#573d1d,#b6803d);
+    background: -moz-radial-gradient(#573d1d,#b6803d); 
+    background: radial-gradient(#573d1d,#b6803d);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'
+    ); 
+    if(device.mobile,
+    set(plugin[get(tooltipname)].css,
+    'text-align:center;
+    width:0.75rem;
+    word-wrap:break-word
+    word-break: break-all;
+    white-space: pre-wrap;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:0.6rem;
+    padding: 2px 1px;
+    background: -webkit-radial-gradient(#573d1d,#b6803d);
+    background: -o-radial-gradient(#573d1d,#b6803d);
+    background: -moz-radial-gradient(#573d1d,#b6803d); 
+    background: radial-gradient(#573d1d,#b6803d);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'
+    ); 
+    );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+  <!-- ************  蓝   ***************-->
+  <action name="set_flag_blue">
+    txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 0.375rem;
+     border-bottom-right-radius: 0.375rem;
+     border-top-left-radius: 0.375rem;
+     border-bottom-left-radius: 0.375rem;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:1rem;
+    font-size:1.4rem;
+    padding: 2px 10px;
+    background: -webkit-linear-gradient(#2b18a9,#190e61,#2b18a9);
+    background: -o-linear-gradient(#2b18a9,#190e61,#2b18a9);
+    background: -moz-linear-gradient(#2b18a9,#190e61,#2b18a9); 
+    background: linear-gradient(#2b18a9,#190e61,#2b18a9); 
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'); 
+    if(device.mobile,
+    set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 0.375rem;
+     border-bottom-right-radius: 0.375rem;
+     border-top-left-radius: 0.375rem;
+     border-bottom-left-radius: 0.375rem;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:.6rem;
+    padding: 1px 5px;
+    background: -webkit-linear-gradient(#2b18a9,#190e61,#2b18a9);
+    background: -o-linear-gradient(#2b18a9,#190e61,#2b18a9);
+    background: -moz-linear-gradient(#2b18a9,#190e61,#2b18a9); 
+    background: linear-gradient(#2b18a9,#190e61,#2b18a9); 
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'); 
+    );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+  <action name="set_flag_blue_r">
+		txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:1rem;
+    font-size:1.4rem;
+    padding: 2px 10px;
+    background: -webkit-linear-gradient(#2b18a9,#190e61,#2b18a9);
+    background: -o-linear-gradient(#2b18a9,#190e61,#2b18a9);
+    background: -moz-linear-gradient(#2b18a9,#190e61,#2b18a9); 
+    background: linear-gradient(#2b18a9,#190e61,#2b18a9);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'); 
+    if(device.mobile,
+    set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:.6rem;
+    padding: 1px 5px;
+    background: -webkit-linear-gradient(#2b18a9,#190e61,#2b18a9);
+    background: -o-linear-gradient(#2b18a9,#190e61,#2b18a9);
+    background: -moz-linear-gradient(#2b18a9,#190e61,#2b18a9); 
+    background: linear-gradient(#2b18a9,#190e61,#2b18a9);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'); 
+    );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+  <action name="set_flag_blue_e">
+		txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+    width:1.2rem;
+    word-wrap:break-word
+    word-break: break-all;
+    white-space: pre-wrap;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:1rem;
+    line-height:1.2rem;
+    padding: 4px 2px;
+    background: -webkit-radial-gradient(#190e61,#2b18a9);
+    background: -o-radial-gradient(#190e61,#2b18a9);
+    background: -moz-radial-gradient(#190e61,#2b18a9); 
+    background: radial-gradient(#190e61,#2b18a9);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'
+    ); 
+    if(device.mobile,
+    set(plugin[get(tooltipname)].css,
+    'text-align:center;
+    width:0.75rem;
+    word-wrap:break-word
+    word-break: break-all;
+    white-space: pre-wrap;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:0.6rem;
+    padding: 2px 1px;
+    background: -webkit-radial-gradient(#190e61,#2b18a9);
+    background: -o-radial-gradient(#190e61,#2b18a9);
+    background: -moz-radial-gradient(#190e61,#2b18a9); 
+    background: radial-gradient(#190e61,#2b18a9);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'
+    ); 
+    );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+  <!-- ************  灰   ***************-->
+  <action name="set_flag_green">
+    txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 0.375rem;
+     border-bottom-right-radius: 0.375rem;
+     border-top-left-radius: 0.375rem;
+     border-bottom-left-radius: 0.375rem;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:1rem;
+    font-size:1.4rem;
+    padding: 2px 10px;
+
+    background: -webkit-linear-gradient(#228262,#103b2d,#228262);
+    background: -o-linear-gradient(#228262,#103b2d,#228262);
+    background: -moz-linear-gradient(#228262,#103b2d,#228262); 
+    background: linear-gradient(#228262,#103b2d,#228262); 
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'); 
+    if(device.mobile,
+    set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 0.375rem;
+     border-bottom-right-radius: 0.375rem;
+     border-top-left-radius: 0.375rem;
+     border-bottom-left-radius: 0.375rem;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:.6rem;
+    padding: 1px 5px;
+
+    background: -webkit-linear-gradient(#228262,#103b2d,#228262);
+    background: -o-linear-gradient(#228262,#103b2d,#228262);
+    background: -moz-linear-gradient(#228262,#103b2d,#228262); 
+    background: linear-gradient(#228262,#103b2d,#228262); 
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'); 
+    );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+  <action name="set_flag_green_r">
+				txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:1rem;
+    font-size:1.4rem;
+    padding: 2px 10px;
+    background: -webkit-linear-gradient(#228262,#103b2d,#228262);
+    background: -o-linear-gradient(#228262,#103b2d,#228262);
+    background: -moz-linear-gradient(#228262,#103b2d,#228262); 
+    background: linear-gradient(#228262,#103b2d,#228262);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'); 
+    if(device.mobile,
+    set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:.6rem;
+    padding: 1px 5px;
+    background: -webkit-linear-gradient(#228262,#103b2d,#228262);
+    background: -o-linear-gradient(#228262,#103b2d,#228262);
+    background: -moz-linear-gradient(#228262,#103b2d,#228262); 
+    background: linear-gradient(#228262,#103b2d,#228262);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'); 
+    );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+  <action name="set_flag_green_e">
+		txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+    width:1.2rem;
+    word-wrap:break-word
+    word-break: break-all;
+    white-space: pre-wrap;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:1rem;
+    line-height:1.2rem;
+    padding: 2px 1px;
+    background: -webkit-radial-gradient(#103b2d,#228262);
+    background: -o-radial-gradient(#103b2d,#228262);
+    background: -moz-radial-gradient(#103b2d,#228262); 
+    background: radial-gradient(#103b2d,#228262);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'
+    ); 
+    if(device.mobile,
+    set(plugin[get(tooltipname)].css,
+    'text-align:center;
+    width:0.75rem;
+    word-wrap:break-word
+    word-break: break-all;
+    white-space: pre-wrap;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:0.6rem;
+    padding: 2px 1px;
+    background: -webkit-radial-gradient(#103b2d,#228262);
+    background: -o-radial-gradient(#103b2d,#228262);
+    background: -moz-radial-gradient(#103b2d,#228262); 
+    background: radial-gradient(#103b2d,#228262);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'
+    ); 
+    );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+
+  <!-- ************  紫   ***************-->
+  <action name="set_flag_purple">
+    txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 0.375rem;
+     border-bottom-right-radius: 0.375rem;
+     border-top-left-radius: 0.375rem;
+     border-bottom-left-radius: 0.375rem;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:1rem;
+    font-size:1.4rem;
+    padding: 2px 10px;
+
+    background: -webkit-linear-gradient(#5e2381,#2a103a,#5e2381);
+    background: -o-linear-gradient(#5e2381,#2a103a,#5e2381);
+    background: -moz-linear-gradient(#5e2381,#2a103a,#5e2381); 
+    background: linear-gradient(#5e2381,#2a103a,#5e2381); 
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;');
+    if(device.mobile,
+    set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 0.375rem;
+     border-bottom-right-radius: 0.375rem;
+     border-top-left-radius: 0.375rem;
+     border-bottom-left-radius: 0.375rem;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:.6rem;
+    padding: 1px 5px;
+
+    background: -webkit-linear-gradient(#5e2381,#2a103a,#5e2381);
+    background: -o-linear-gradient(#5e2381,#2a103a,#5e2381);
+    background: -moz-linear-gradient(#5e2381,#2a103a,#5e2381); 
+    background: linear-gradient(#5e2381,#2a103a,#5e2381); 
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;');
+    ); 
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+  <action name="set_flag_purple_r">
+		txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:1rem;
+    font-size:1.4rem;
+    padding: 2px 10px;
+    background: -webkit-linear-gradient(#5e2381,#2a103a,#5e2381);
+    background: -o-linear-gradient(#5e2381,#2a103a,#5e2381);
+    background: -moz-linear-gradient(#5e2381,#2a103a,#5e2381); 
+    background: linear-gradient(#5e2381,#2a103a,#5e2381);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'); 
+    if(device.mobile,
+    set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:.6rem;
+    padding: 1px 5px;
+    background: -webkit-linear-gradient(#5e2381,#2a103a,#5e2381);
+    background: -o-linear-gradient(#5e2381,#2a103a,#5e2381);
+    background: -moz-linear-gradient(#5e2381,#2a103a,#5e2381); 
+    background: linear-gradient(#5e2381,#2a103a,#5e2381);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'); 
+    );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+  <action name="set_flag_purple_e">
+		txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+    width:1.2rem;
+    word-wrap:break-word
+    word-break: break-all;
+    white-space: pre-wrap;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:1rem;
+    line-height:1.2rem;
+    padding: 4px 2px;
+
+    background: -webkit-radial-gradient(#2a103a,#5e2381);
+    background: -o-radial-gradient(#2a103a,#5e2381);
+    background: -moz-radial-gradient(#2a103a,#5e2381); 
+    background: radial-gradient(#2a103a,#5e2381);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'
+    ); 
+    if(device.mobile,
+    set(plugin[get(tooltipname)].css,
+    'text-align:center;
+    width:0.75rem;
+    word-wrap:break-word
+    word-break: break-all;
+    white-space: pre-wrap;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:0.6rem;
+    padding: 2px 1px;
+
+    background: -webkit-radial-gradient(#2a103a,#5e2381);
+    background: -o-radial-gradient(#2a103a,#5e2381);
+    background: -moz-radial-gradient(#2a103a,#5e2381); 
+    background: radial-gradient(#2a103a,#5e2381);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'
+    ); 
+    );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+  <!-- ************  灰   ***************-->
+  <action name="set_flag_gray">
+    txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 0.375rem;
+     border-bottom-right-radius: 0.375rem;
+     border-top-left-radius: 0.375rem;
+     border-bottom-left-radius: 0.375rem;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:1rem;
+    font-size:1.4rem;
+    padding: 2px 10px;
+    background: -webkit-linear-gradient(#3E2A24,#363636,#3E2A24);
+    background: -o-linear-gradient(#3E2A24,#363636,#3E2A24);
+    background: -moz-linear-gradient(#3E2A24,#363636,#3E2A24); 
+    background: linear-gradient(#3E2A24,#363636,#3E2A24); 
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'); 
+    if(device.mobile,
+    set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 0.375rem;
+     border-bottom-right-radius: 0.375rem;
+     border-top-left-radius: 0.375rem;
+     border-bottom-left-radius: 0.375rem;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:.6rem;
+    padding: 1px 5px;
+
+    background: -webkit-linear-gradient(#3E2A24,#363636,#3E2A24);
+    background: -o-linear-gradient(#3E2A24,#363636,#3E2A24);
+    background: -moz-linear-gradient(#3E2A24,#363636,#3E2A24); 
+    background: linear-gradient(#3E2A24,#363636,#3E2A24); 
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;');
+    );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+  <action name="set_flag_gray_r">
+		txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:1rem;
+    font-size:1.4rem;
+    padding: 2px 10px;
+    background: -webkit-linear-gradient(#3E2A24,#363636,#3E2A24);
+    background: -o-linear-gradient(#3E2A24,#363636,#3E2A24);
+    background: -moz-linear-gradient(#3E2A24,#363636,#3E2A24); 
+    background: linear-gradient(#3E2A24,#363636,#3E2A24);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    -webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		-moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'); 
+    if(device.mobile,set(plugin[get(tooltipname)].css,
+    'text-align:center;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:.6rem;
+    padding: 1px 5px;
+    background: -webkit-linear-gradient(#3E2A24,#363636,#3E2A24);
+    background: -o-linear-gradient(#3E2A24,#363636,#3E2A24);
+    background: -moz-linear-gradient(#3E2A24,#363636,#3E2A24); 
+    background: linear-gradient(#3E2A24,#363636,#3E2A24);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    -webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		-moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'); 
+    );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+
+  <action name="set_flag_gray_e">
+		txtadd(tooltipname, 'tooltip_', get(name)); 
+		set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf'); 
+		txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']'); 
+		addplugin(get(tooltipname)); 
+		set(plugin[get(tooltipname)].align,top); 
+		set(plugin[get(tooltipname)].edge,bottom); 
+		set(plugin[get(tooltipname)].backgroundalpha,0);
+		set(plugin[get(tooltipname)].css,
+    'text-align:center;
+    word-wrap:break-word
+    word-break: break-all;
+    white-space: pre-wrap;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    width:1.2rem;
+    font-size:1rem;
+    line-height:1.2rem;
+    padding: 4px 2px;
+    background: -webkit-radial-gradient(#363636,#3E2A24);
+    background: -o-radial-gradient(#363636,#3E2A24);
+    background: -moz-radial-gradient(#363636,#3E2A24); 
+    background: radial-gradient(#363636,#3E2A24);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'
+    ); 
+    if(device.mobile,
+    set(plugin[get(tooltipname)].css,
+    'text-align:center;
+    width:.75rem;
+    word-wrap:break-word
+    word-break: break-all;
+    white-space: pre-wrap;
+     opacity:0.9;
+     border-top-right-radius: 9999px;
+     border-bottom-right-radius: 9999px;
+     border-top-left-radius: 9999px;
+     border-bottom-left-radius: 9999px;
+    color:#FFFFFF;
+    font-family: STSong;
+    font-family:MicrosoftYahei;
+    font-size:0.5rem;
+    line-height:0.6rem;
+    padding: 2px 1px;
+    background: -webkit-radial-gradient(#363636,#3E2A24);
+    background: -o-radial-gradient(#363636,#3E2A24);
+    background: -moz-radial-gradient(#363636,#3E2A24); 
+    background: radial-gradient(#363636,#3E2A24);
+    border: 0.1rem; 
+    border-style: solid none solid none;
+    	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  -moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+		  box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.5);
+    border-color:gray;'
+    ); 
+    );
+		set(plugin[get(tooltipname)].x,0); 
+		set(plugin[get(tooltipname)].y,4);
+		set(plugin[get(tooltipname)].autowidth,true); 
+		set(plugin[get(tooltipname)].autoheight,true);    
+		set(plugin[get(tooltipname)].vcenter,true); 
+		set(plugin[get(tooltipname)].background,true);
+		set(plugin[get(tooltipname)].onclick,"hotspotOnclick"); 
+		set(plugin[get(tooltipname)].ondown,"hotspotOndown");
+		set(plugin[get(tooltipname)].onup,"hotspotOnup");
+		if(text == '' OR text === null, copy(plugin[get(tooltipname)].html, scene[get(linkedscene)].title), copy(plugin[get(tooltipname)].html,text) ); 
+  </action>
+</krpano>

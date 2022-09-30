@@ -1,0 +1,34 @@
+﻿<krpano version="1.20.9" title="Virtual Tour">
+  <!-- <krpano version="1.20.9" title="Virtual Tour" debugmode="true" debugkeys="true" debugjsactions="true" debugjsplugins="true"> -->
+  <layer name="copyright" url="%SWFPATH%/plugins/textfield.swf" html="阿尔法视觉科技提供技术支持" align="lefttop" x="-12" y="-3" width="160" height="16" keep="true" visible="true" backgroundalpha="0" backgroundcolor="#000" css="text-align:left; color:#fff; font-family:SimHei; font-size:12px;-webkit-transform:scale(.8);" />
+  <include url="skin/vtourskin.xml" />
+  <include url="plugins/flag.xml" />
+  <!-- startup action - load the first scene -->
+  <action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+  </action>
+  <include url="skin/vtourskin_design_alpha.xml" />
+
+  <action name="hotspotOndown">
+		jscall(calc('let event = new Event("hotspotOndown");event.hotspot = "' + get(name) + '"; window.dispatchEvent(event);'))
+  </action>
+  <action name="hotspotOnclick">
+		jscall(calc('let event = new Event("hotspotOnclick");event.hotspot = "' + get(name) + '"; window.dispatchEvent(event);'))
+    
+  </action>
+  <action name="hotspotOnup">
+		jscall(calc('let event = new Event("hotspotOnup");event.hotspot = "' + get(name) + '"; window.dispatchEvent(event);'))
+  </action>
+  <action name="hotspot_animate">  inc(frame,1,get(lastframe),0); mul(ypos,frame,frameheight); txtadd(crop,'0|',get(ypos),'|',get(framewidth),'|',get(frameheight)); delayedcall(0.03, if(loaded, hotspot_animate() ) );  </action>
+
+  <!-- 地标 -->
+  <!-- <style name="spot" url="%SWFPATH%/skin/vtourskin_mapspot.png" scale="0.8" oy="-40" align="lefttop" edge="center" zorder="2" onclick="subtxt(spotid,get(name),4,2);if(spotid != scene[get(xml.scene)].index,
+loadscene(get(scene[get(spotid)].name),null,MERGE,BLEND(1)); );" /> -->
+  <style name="spot" url="%SWFPATH%/skin/vtourskin_mapspot.png" scale="0.5" oy="-30" align="lefttop" edge="center" zorder="2" />
+  <krpano>
+    <skin_settings littleplanetintro="false" autotour="false" fullscreen="false" title="false" thumbs="false" thumbs_width="80" thumbs_height="60" thumbs_padding="5" thumbs_crop="0|40|240|160" thumbs_opened="false" thumbs_text="true" thumbs_dragging="true" thumbs_onhoverscrolling="false" thumbs_scrollbuttons="false" thumbs_scrollindicator="false" thumbs_loop="true" thumbs_offset="0" thumbs_container_width="95%" design_skin_images="vtourskin.png" design_bgcolor="0x2D3E50" design_bgalpha="0.5" design_bgborder="0" design_bgroundedge="3" design_bgshadow="0 4 10 0x000000 0" design_thumbborder_bgborder="3 0xFFA500 3.0" design_thumbborder_padding="3" design_thumbborder_bgroundedge="0" design_text_css="color:#FFFFFF; font-family:Arial;" design_text_shadow="1" controlbar_width="-24" controlbar_height="0" controlbar_offset="120" controlbar_offset_closed="55" littlemap="true" btn_littlemap="true" loading="true" loading_bg="https://www.alphavisual.cn/wechat/disk1/bgyyd/weishapan/static/krpano/loadingimg/loading@2x.jpg"></skin_settings>
+  </krpano>
+  <include name="xmlPath" url="%$xmlPath%" />
+</krpano>

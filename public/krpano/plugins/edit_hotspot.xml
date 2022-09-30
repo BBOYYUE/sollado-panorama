@@ -1,0 +1,225 @@
+<krpano >
+
+  <action name="startedit_hotspot" autorun="onstart">
+    set(Sdx3,0.0001);
+  </action>
+
+  <style
+    name="text_SanMih"
+    enabled="false"
+    url="%SWFPATH%/plugins/textfield.swf"
+    css="font-family:Arial; color:#FFFFFF; font-size:12px;"
+    x="0"
+    y="0"
+    padding="3 7"
+    keep="true"
+    align="lefttop"
+    background="false"
+    backgroundcolor="0x2D3E50"
+    backgroundalpha="0.7"
+    border="false"
+    bordercolor="0xFFFFFF"
+    borderalpha="0.8"
+    borderwidth="1.0"
+    roundedge="2"
+    shadow="5.0"
+    shadowrange="3.0"
+    shadowangle="45"
+    shadowcolor="0x2D3E50"
+    shadowalpha="0"
+    textshadow="0.0"
+    textshadowrange="4.0"
+    textshadowangle="45"
+    textshadowcolor="0x000000"
+    textshadowalpha="1.0"
+    wordwrap="false"
+    ondown="draglayerSANM();"/>
+
+  <style
+    name="Cont_SanMih"
+    type="container"
+    keep="true"
+    align="righttop"
+    x="5"
+    y="0"
+    width="110"
+    height="19"
+    zorder="1"
+    alpha="1"
+    enabled="true"
+    bgcapture="true"
+    bgcolor="0x57606a"
+    bgalpha="0.9"
+    bgshadow="3 3 3 0x000000 0.8"
+    bgroundedge="2"
+    onover="if(nagata !== 1,set(bgcolor,0x808c98););"
+    onup="sbros_cveta_knopok()"
+    onout="if(nagata !== 1,set(bgcolor,0x5e6873);, set(bgcolor,0x808c98);"/>
+
+  <layer
+    name="Cont_osnovnoj"
+    style="Cont_SanMih"
+    x="100"
+    y="10"
+    width="120"
+    height="367"
+    alpha="1"
+    bgalpha="0.6"
+    maskchildren="true"
+    bgborder="1 0xFFFFFF 0.8"
+    bgshadow="4 4 4 0x000000 0.8"
+    bgroundedge="3"
+    onover=""
+    onout=""
+    ondown="draglayerSANM()"
+    onclick="if(layer[svernutjS].rotate === 0, tween(layer[svernutjS].rotate, 180); tween(layer[Cont_osnovnoj].height, 25);,
+		                           tween(layer[svernutjS].rotate, 0); tween(layer[Cont_osnovnoj].height, 367););
+								   set(Sdx3,0.0001);">
+
+    <layer
+      name="Fon_v_nazvanii"
+      style="Cont_SanMih"
+      x="0"
+      y="0"
+      width="120"
+      height="25"
+      alpha="1"
+      bgalpha="0.8"
+      enabled="false"
+      bgborder="1 0xFFFFFF 0.8"
+      bgshadow="4 4 4 0x000000 0.8"
+      bgroundedge="2"
+      bgcolor="0x3c444c"
+      onover="set(bgalpha,1);"
+      onout="set(bgalpha,0.8);"/>
+
+    <layer name="name_edit hotspot" style="text_SanMih" css="font-family:Arial; color:#FFFFFF; font-size:14px;" enabled="false" zorder="2" textshadow="5.0" x="4" y="1" html="[b]Нotspot[/b] "/>
+
+    <layer
+      name="svernutjS"
+      keep="true"
+      align="righttop"
+      edge="center"
+      x="10"
+      y="12"
+      url="%SWFPATH%/skin/triangle_ar.png"
+      scale="0.25"
+      alpha="0.6"
+      zorder="2"
+      rotate="0"
+      onover="set(alpha,1);"
+      onout="set(alpha,0.6);"
+      onclick="if(rotate === 0, tween(rotate, 180); tween(layer[Cont_osnovnoj].height, 25);,
+		                           tween(rotate, 0); tween(layer[Cont_osnovnoj].height, 367););
+								   set(Sdx3,0.0001);"/>
+
+    <layer name="Cont_m" style="Cont_SanMih" x="0" y="28" width="120" height="340" alpha="1" bgalpha="0" bgborder="1 0xFFFFFF 0.8" bgshadow="4 4 4 0x000000 0.8" bgroundedge="3">
+
+      <layer name="name_Hotspot" style="text_SanMih" align="top" css="font-family:Arial; color:#FFFFFF; font-size:12px;" textshadow="5.0" x="0" y="5" html="Press on hotspot "/>
+
+      <layer name="edit_hotspot1" style="Cont_SanMih" y="30" ondown="set(bgcolor,0x808c98); izmena_parametrSM(hotspot,get(name_Hotspot_San),0,scale,0.1,tit_s,0,1000); set(nagata,1);">
+        <layer name="S1text" style="text_SanMih" x="0" y="0" html="scale"/>
+        <layer name="tit_s" style="text_SanMih" x="50" y="0" html=""/>
+      </layer>
+
+      <layer name="edit_hotspot2" style="Cont_SanMih" y="50" ondown="set(bgcolor,0x808c98); izmena_parametrSM(hotspot,get(name_Hotspot_San),0,width,100,tit_widthS,0,10000); set(nagata,1);">
+        <layer name="widthStext" style="text_SanMih" x="0" y="0" html="width"/>
+        <layer name="tit_widthS" style="text_SanMih" x="50" y="0" html=""/>
+      </layer>
+
+      <layer name="edit_hotspot3" style="Cont_SanMih" y="70" ondown="set(bgcolor,0x808c98); izmena_parametrSM(hotspot,get(name_Hotspot_San),0,height,100,tit_heightS,0,10000); set(nagata,1);">
+        <layer name="heightStext" style="text_SanMih" x="0" y="0" html="height"/>
+        <layer name="tit_heightS" style="text_SanMih" x="50" y="0" html=""/>
+      </layer>
+
+      <layer name="edit_hotspot4" style="Cont_SanMih" y="90" ondown="set(bgcolor,0x808c98); izmena_parametrSM(hotspot,get(name_Hotspot_San),0,alpha,3,tit_alphaS,0,2); set(nagata,1);">
+        <layer name="alphaStext" style="text_SanMih" x="0" y="0" html="alpha"/>
+        <layer name="tit_alphaS" style="text_SanMih" x="50" y="0" html=""/>
+      </layer>
+
+      <layer name="edit_hotspot5" style="Cont_SanMih" y="110" ondown="set(bgcolor,0x808c98); izmena_parametrSM(hotspot,get(name_Hotspot_San),0,rotate,10,tit_rotateS,-180,180); set(nagata,1);">
+        <layer name="rotateStext" style="text_SanMih" x="0" y="0" html="rotate"/>
+        <layer name="tit_rotateS" style="text_SanMih" x="50" y="0" html=""/>
+      </layer>
+
+      <layer name="edit_hotspot6" style="Cont_SanMih" y="130" ondown="set(bgcolor,0x808c98); izmena_parametrSM(hotspot,get(name_Hotspot_San),0,ath,10,tit_ath,-180,180); set(nagata,1);">
+        <layer name="athtext" style="text_SanMih" x="0" y="0" html="ath"/>
+        <layer name="tit_ath" style="text_SanMih" x="50" y="0" html=""/>
+      </layer>
+
+      <layer name="edit_hotspot7" style="Cont_SanMih" y="150" ondown="set(bgcolor,0x808c98); izmena_parametrSM(hotspot,get(name_Hotspot_San),0,atv,10,tit_atv,-90,90); set(nagata,1);">
+        <layer name="atvtext" style="text_SanMih" x="0" y="0" html="atv"/>
+        <layer name="tit_atv" style="text_SanMih" x="50" y="0" html=""/>
+      </layer>
+
+      <layer name="edit_hotspot8" style="Cont_SanMih" y="170" ondown="set(bgcolor,0x808c98); izmena_parametrSM(hotspot,get(name_Hotspot_San),0,rx,50,tit_rx,-180,180); set(nagata,1);">
+        <layer name="rxtext" style="text_SanMih" x="0" y="0" html="rx"/>
+        <layer name="tit_rx" style="text_SanMih" x="50" y="0" html=""/>
+      </layer>
+
+      <layer name="edit_hotspot9" style="Cont_SanMih" y="190" ondown="set(bgcolor,0x808c98); izmena_parametrSM(hotspot,get(name_Hotspot_San),0,ry,50,tit_ry,-180,180); set(nagata,1);">
+        <layer name="rytext" style="text_SanMih" x="0" y="0" html="ry"/>
+        <layer name="tit_ry" style="text_SanMih" x="50" y="0" html=""/>
+      </layer>
+
+      <layer name="edit_hotspot10" style="Cont_SanMih" y="210" ondown="set(bgcolor,0x808c98); izmena_parametrSM(hotspot,get(name_Hotspot_San),0,rz,50,tit_rz,-180,180); set(nagata,1);">
+        <layer name="rztext" style="text_SanMih" x="0" y="0" html="rz"/>
+        <layer name="tit_rz" style="text_SanMih" x="50" y="0" html=""/>
+      </layer>
+
+      <layer name="edit_hotspot11" style="Cont_SanMih" y="230" ondown="set(bgcolor,0x808c98); izmena_parametrSM(hotspot,get(name_Hotspot_San),0,ox,50,tit_ox,-10000,10000); set(nagata,1);">
+        <layer name="txtext" style="text_SanMih" x="0" y="0" html="ox"/>
+        <layer name="tit_ox" style="text_SanMih" x="50" y="0" html=""/>
+      </layer>
+
+      <layer name="edit_hotspot12" style="Cont_SanMih" y="250" ondown="set(bgcolor,0x808c98); izmena_parametrSM(hotspot,get(name_Hotspot_San),0,oy,50,tit_oy,-10000,10000); set(nagata,1);">
+        <layer name="oytext" style="text_SanMih" x="0" y="0" html="oy"/>
+        <layer name="tit_oy" style="text_SanMih" x="50" y="0" html=""/>
+      </layer>
+
+      <layer name="edit_hotspot13" style="Cont_SanMih" y="270" ondown="set(bgcolor,0x808c98); izmena_parametrSM(hotspot,get(name_Hotspot_San),0,depth,500,tit_depth,0,100000); set(nagata,1);">
+        <layer name="depthtext" style="text_SanMih" x="0" y="0" html="depth"/>
+        <layer name="tit_depth" style="text_SanMih" x="50" y="0" html=""/>
+      </layer>
+
+      <layer
+        name="edit_hotspot14"
+        style="Cont_SanMih"
+        y="295"
+        bgcolor="0x762f2f"
+        ondown="set(bgcolor,0xb45d5d); izmena_skorostySM(); set(nagata,1);"
+        onup="set(bgcolor,0x762f2f); set(nagata,0);"
+        onover="if(nagata !== 1,set(bgcolor,0xb45d5d););"
+        onout="if(nagata !== 1,set(bgcolor,0x762f2f);, set(bgcolor,0xb45d5d); ">
+        <layer name="speedSM" style="text_SanMih" x="0" y="0" html="鼠标速度"/>
+        <layer name="tit_speedSM" style="text_SanMih" x="50" y="0" html="10"/>
+      </layer>
+
+      <layer name="edit_hotspot15" style="Cont_SanMih" y="315" bgcolor="0x2f764a" ondown="set(bgcolor,0x39823e);showlog(); warningSM();" onup="set(bgcolor,0x2f764a)" onover="set(bgcolor,0x5db463);" onout="set(bgcolor,0x2f764a);">
+        <layer name="rxytext" style="text_SanMih" x="0" y="0" html="复制代码"/>
+      </layer>
+
+    </layer>
+  </layer>
+
+  <events name="sbros_cveta_knopokSM" onmouseup="sbros_cveta_knopok()"/>
+
+  <action name="sbros_cveta_knopok">
+    for(set(i,0), i LT 14, inc(i), txtadd(edit_hotspotN,edit_hotspot,get(i)); set(layer[get(edit_hotspotN)].bgcolor, 0x5e6873); ); set(nagata,0);
+  </action>
+
+  <action name="izmena_parametrSM">
+    copy(drag_currentx, x); copy(drag_stagex, mouse.stagex); asyncloop(pressed, sub(dx, mouse.stagex, drag_stagex); mul(dx2,dx,%5); mul(dx2,get(Sdx3)); add(%1[%2].%4, get(dx2)); if(%4 === %4, clamp(%1[%2].%4, %7, %8);); copy(print_H1, %1[%2].%4);
+      roundval(print_H1,2); set(layer[%6].html, get(print_H1)); ); </action> <action name="izmena_skorostySM"> copy(Sdrag_currentx, x); copy(Sdrag_stagex, mouse.stagex); asyncloop(pressed, sub(Sdx, mouse.stagex, Sdrag_stagex); mul(Sdx2,Sdx,0.0005);
+      mul(Sdx2,0.00001); add(Sdx3,Sdx2); if(Sdx3 LT 0, set(Sdx3,0);); if(Sdx3 GT 0.0001, set(Sdx3,0.0001);); mul(speed_N,Sdx3,100000); roundval(speed_N,2); set(layer[tit_speedSM].html, get(speed_N)); ); </action> <action name="draghotspotSM">
+      spheretoscreen(ath, atv, hotspotcenterx, hotspotcentery, 'l'); sub(drag_adjustx, mouse.stagex, hotspotcenterx); sub(drag_adjusty, mouse.stagey, hotspotcentery); asyncloop(pressed, sub(dx, mouse.stagex, drag_adjustx); sub(dy, mouse.stagey,
+      drag_adjusty); screentosphere(dx, dy, ath, atv); set(name_Hotspot_San, calc('' + name + '')); roundval(ath,2); roundval(atv,2); roundval(rx,2); roundval(ry,2); roundval(rz,2); roundval(ox,2); roundval(oy,2); roundval(tz,2); roundval(rotate,2);
+      roundval(scale,3); roundval(alpha,2); if(width != prop,esli_ne_propSMHotspot(width,2,0);, esli_propSMHotspot(width,2);); if(height != prop,esli_ne_propSMHotspot(height,3,0);, esli_propSMHotspot(height,3);); roundval(depth); set(layer[tit_ath].html,
+      get(ath)); set(layer[tit_atv].html, get(atv)); set(layer[tit_rx].html, get(rx)); set(layer[tit_ry].html, get(ry)); set(layer[tit_rz].html, get(rz)); set(layer[tit_ox].html, get(ox)); set(layer[tit_oy].html, get(oy)); set(layer[tit_tz].html, get(tz));
+      set(layer[tit_rotateS].html, get(rotate)); set(layer[tit_s].html, get(scale)); set(layer[tit_alphaS].html, get(alpha)); set(layer[tit_widthS].html, get(width)); set(layer[tit_heightS].html, get(height)); set(layer[tit_depth].html, get(depth)); );
+      txtadd(nameH,&#8220;,get(name_Hotspot_San),&#8221;); set(layer[name_Hotspot].html, get(nameH)); trace('name="',name_Hotspot_San,'" scale="',scale,'" width="',width,'" height="',height,'" alpha="',alpha,'" rotate="',rotate, '" depth="',depth, '"
+      ath="',ath,'" atv="',atv,'" rx="',rx,'" ry="',ry,'" rz="',rz,'" ox="',ox,'" oy="',oy,'"'); </action> <action name="esli_ne_propSMHotspot"> roundval(%1); set(layer[edit_hotspot%2].ondown, set(bgcolor,0x808c98);
+      izmena_parametrSM(hotspot,get(name_Hotspot_San),0,%1 ,100,tit_%1S,0,10000); set(nagata,1);); </action> <action name="esli_propSMHotspot"> set(layer[edit_hotspot%2].ondown, set(bgcolor,0x808c98); set(nagata,1);); </action> <action
+      name="draglayerSANM"> copy(drag_currentx, x); copy(drag_currenty, y); copy(drag_stagex, mouse.stagex); copy(drag_stagey, mouse.stagey); indexoftxt(align_contains_right, get(align), 'right'); indexoftxt(align_contains_bottom, get(align), 'bottom');
+      calc(drag_align_x, align_contains_right GE 0 ? -1 : +1); calc(drag_align_y, align_contains_bottom GE 0 ? -1 : +1); asyncloop(pressed, calc(x, drag_currentx + (mouse.stagex - drag_stagex)*drag_align_x); calc(y, drag_currenty + (mouse.stagey -
+      drag_stagey)*drag_align_y); ); </action> <action name="warningSM" > trace(注意! 点击对应热点显示热点的最新设置.); </action> </krpano>
