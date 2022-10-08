@@ -5,9 +5,11 @@
 // } else {
 // }
 // const host = "https://filesystem.api.sollado.com/";
-const host = "http://laravel.test/";
+// const host = "http://laravel.test/";
+const host = 'https://www.sollado.com/'
 const filesystem = "api/v1/filesystem/";
 const auth = "api/v1/authorizations/";
 const panorama = "api/v1/panorama/";
+const broadcaster = 'broadcasting/auth'
 
-export { host, filesystem, auth, panorama };
+export { host, filesystem, auth, panorama, broadcaster };

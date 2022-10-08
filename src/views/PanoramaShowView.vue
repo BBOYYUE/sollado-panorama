@@ -30,7 +30,7 @@ function init() {
         html5: "auto",
         mobilescale: 1.0,
         passQueryParameters: true,
-        initvars: { xmlPath: 'http://127.0.0.1:9000/sollado-api/' + panorama.value.xml },
+        initvars: { xmlPath: 'https://oss.sollado.com/' + panorama.value.xml },
         onready: krpanoReady,
         consolelog: true,
     });

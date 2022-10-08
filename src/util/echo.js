@@ -1,13 +1,16 @@
 import Echo from 'laravel-echo';
 import Pusher from 'pusher-js'
 import http from "@/util/http";
+import * as api from "@/util/api"
 
 const PusherImpl = Pusher;
 
 const EchoImpl = new Echo({
     broadcaster: 'pusher',
     key: '7752d0686cc33c61e028',
-    wsHost: 'laravel.test',
+    // wsHost: 'laravel.test',
+    wsHost: '39.100.229.171',
+    // wsHost: 'wss.sollado.com',
     wsPort: '6001',
     cluster: 'ap3',
     forceTLS: false,
@@ -16,7 +19,7 @@ const EchoImpl = new Echo({
     authorizer: (channel, options) => {
         return {
             authorize: (socketId, callback) => {
-                http().post('http://laravel.test/broadcasting/auth', {
+                http().post( api.host + api.broadcaster, {
                     socket_id: socketId,
                     channel_name: channel.name
                 })
