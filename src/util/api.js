@@ -5,11 +5,12 @@
 // } else {
 // }
 // const host = "https://filesystem.api.sollado.com/";
-// const host = "http://laravel.test/";
-const host = 'https://www.sollado.com/'
+const host = "http://laravel.test/";
+// const host = 'https://www.sollado.com/'
 const filesystem = "api/v1/filesystem/";
 const auth = "api/v1/authorizations/";
 const panorama = "api/v1/panorama/";
-const broadcaster = 'broadcasting/auth'
+const broadcaster = "broadcasting/auth";
+const assetUrl = "http://127.0.0.1:9000/sollado-api/";
 
-export { host, filesystem, auth, panorama, broadcaster };
+export { host, filesystem, auth, panorama, broadcaster, assetUrl };
