@@ -1,5 +1,5 @@
 {
-  "name": "sollado-panorama",
+  "name": "sollado-web",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",

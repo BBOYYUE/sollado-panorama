@@ -26,7 +26,7 @@ export const useFilesystemStore = defineStore("filesystem", {
     };
   },
   actions: {
-    getStorehouse() {
+    getStorehouse () {
       this.queryBuilder.filter.type = 2;
       this.queryBuilder.filter.parent_id = undefined;
       this.queryBuilder.filter.name = undefined;
@@ -40,7 +40,7 @@ export const useFilesystemStore = defineStore("filesystem", {
           }
         });
     },
-    getFolder() {
+    getFolder () {
       this.queryBuilder.filter.parent_id = this.active;
       http()
         .get(api.host + api.filesystem + queryBuilder(this.queryBuilder))
@@ -51,22 +51,22 @@ export const useFilesystemStore = defineStore("filesystem", {
           }
         });
     },
-    setFilterByName(name) {
+    setFilterByName (name) {
       this.queryBuilder.filter.name = name;
     },
-    setActive(active) {
+    setActive (active) {
       if (this.history[this.history.length - 1] != active) {
         this.history.push(active);
       }
       this.active = active;
     },
-    setPage(page) {
+    setPage (page) {
       this.queryBuilder.page = page;
     },
-    addFile(file) {
+    addFile (file) {
       this.folder.data.push(file);
     },
-    storeFolder(form) {
+    storeFolder (form) {
       http()
         .post(api.host + api.filesystem, form)
         .then((res) => {
@@ -76,12 +76,18 @@ export const useFilesystemStore = defineStore("filesystem", {
           }
         });
     },
-    deleteFile(id) {
+    deleteFile (id) {
       http().delete(
-        api.host + api.filesystem + id
+        api.host + api.filesystem + id + queryBuilder(this.queryBuilder)
       );
+      // .then((res) => {
+      //     let respond = res.data
+      //     if (respond.code == 200) {
+      //         this.folder = respond.data
+      //     }
+      // })
     },
-    downloadFile(id) {
+    downloadFile (id) {
       window.open(api.host + api.filesystem + id);
     },
   },

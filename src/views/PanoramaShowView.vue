@@ -46,7 +46,7 @@ watch(
 );
 </script>
 <template>
-  <div class="w-screen h-screen">
+  <div class="w-wull h-full">
     <div id="panorama" style="overflow: hidden" class="w-full h-full"></div>
   </div>
 </template>
